@@ -35,8 +35,8 @@ public class ScrumBoard extends World
         addObject(new ProgressDice(), 20,310);
         peg = new Peg1();
         addObject(peg,mainBoard[0].location[0],mainBoard[0].location[1]);
-        //int[] location = new int[]{450,430};
-        //addObject(new Cell(new StStart(),location),location[0],location[1]);
+//        int[] location = new int[]{586,185};
+//        addObject(new Cell(new StStart(),location),location[0],location[1]);
         
     }
     public Peg1 getPeg()
@@ -53,19 +53,19 @@ public class ScrumBoard extends World
         mainBoard[4]= new Cell(new StBurndown(-25),new int[]{260,430});
         mainBoard[5]= new Cell(new StBurndown(50),new int[]{310,430});
         mainBoard[6]= new Cell(new StEndOfDays(),new int[]{450,430});
-/*        mainBoard[7]= new Cell(new StImpediment());
-        mainBoard[8]= new Cell(new StOpportunity());        
-        mainBoard[9]= new Cell(new StTool());
-        mainBoard[10]= new Cell(new StEndOfDays());
-        mainBoard[11]= new Cell(new StImpediment());
-        mainBoard[12]= new Cell(new StOpportunity());
-        mainBoard[13]= new Cell(new StTool());
-        mainBoard[14]= new Cell(new StEndOfDays());
-        mainBoard[15]= new Cell(new StProgressReporting());
-        mainBoard[16]= new Cell(new StImpediment());
-        mainBoard[17]= new Cell(new StOpportunity());
-        mainBoard[18]= new Cell(new StTool());
-        mainBoard[19]= new Cell(new StEndOfDays());
-        mainBoard[20]= new Cell(new StSprintReview());
-  */  }
+        mainBoard[7]= new Cell(new StImpediment(),new int[]{579,373});
+        mainBoard[8]= new Cell(new StOpportunity(),new int[]{610,307});        
+        mainBoard[9]= new Cell(new StTool(),new int[]{610,245});
+        mainBoard[10]= new Cell(new StEndOfDays(),new int[]{586,185});
+        mainBoard[11]= new Cell(new StImpediment(),new int[]{542,142});
+        mainBoard[12]= new Cell(new StOpportunity(),new int[]{485,117});
+        mainBoard[13]= new Cell(new StTool(),new int[]{420,117});
+        mainBoard[14]= new Cell(new StEndOfDays(),new int[]{364,149});
+        mainBoard[15]= new Cell(new StProgressReporting(),new int[]{306,182});
+        mainBoard[16]= new Cell(new StImpediment(),new int[]{286,247});
+        mainBoard[17]= new Cell(new StOpportunity(),new int[]{294,309});
+        mainBoard[18]= new Cell(new StTool(),new int[]{329,365});
+        mainBoard[19]= new Cell(new StEndOfDays(),new int[]{450,430});
+        mainBoard[20]= new Cell(new StSprintReview(),new int[]{708,426});
+  }
 }
