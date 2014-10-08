@@ -28,7 +28,7 @@ public class ScrumBoard extends World
     {
         createBoard();
         scrumdice1 = new ScrumDice();
-        addObject(scrumdice1, 20,100);
+        addObject(scrumdice1, 70,100);
         addObject(new ScrumDice(), 20,150);
         addObject(new ProgressDice(), 20,210);
         addObject(new ProgressDice(), 20,260);

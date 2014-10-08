@@ -23,7 +23,11 @@ public class ScrumDice extends Dice
             System.out.println("output:"+num);
             Message m = new Message(Integer.toString(num)) ;
             ScrumBoard world = (ScrumBoard) getWorld();
-            world.addObject( m, 50,100 ) ;
+            ScrumDice dice = (ScrumDice) getWorld().getObjects(ScrumDice.class).get(0); 
+             String img = num+".png";
+            
+            dice.setImage(img);
+            //world.addObject( m, 100,100 ) ;
             return num;
     }
 }
