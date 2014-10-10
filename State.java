@@ -16,4 +16,8 @@ public class State extends Actor
     {
         // Add your action code here.
     }    
+    
+    public void stateMove()
+    {
+    }
 }
