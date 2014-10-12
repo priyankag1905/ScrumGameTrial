@@ -29,8 +29,14 @@ public class Peg1 extends Peg
     
     public void movePeg(int val)
     {
-        currentCell += val;
+        int newCell = (currentCell+val)%19;
+        if (currentCell+val>18)
+            currentCell = newCell+6;
+        else currentCell = newCell;
+        
         ScrumBoard world = (ScrumBoard) getWorld();
         this.setLocation(world.mainBoard[currentCell].location[0],world.mainBoard[currentCell].location[1]);
+        world.addObject(world.mainBoard[currentCell].cellState,0,0);
+        world.mainBoard[currentCell].cellState.stateMove();
     }
 }
