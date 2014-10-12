@@ -7,20 +7,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Peg1 extends Peg
-{ 
+{
+    int currentCell;
     /**
      * Act - do whatever the Peg1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Peg1()
     {
-        
+        currentCell=0;
     }
     
     public void act() 
     {
+         if(Greenfoot.mousePressed(this)) {
+           ScrumBoard world = (ScrumBoard) getWorld();
+           int outcome = world.scrumdice1.roll();
+           movePeg(outcome);
+        }
     }
-  
     
     public void movePeg(int val)
     {
@@ -33,6 +38,5 @@ public class Peg1 extends Peg
         this.setLocation(world.mainBoard[currentCell].location[0],world.mainBoard[currentCell].location[1]);
         world.addObject(world.mainBoard[currentCell].cellState,0,0);
         world.mainBoard[currentCell].cellState.stateMove();
-
     }
 }
