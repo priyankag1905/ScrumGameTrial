@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Rolled(java.lang.String)
+comment1.params=text
+comment1.target=void\ setNum(java.lang.String)
+comment2.params=value
+comment2.target=void\ saveNum(int)
+comment3.params=
+comment3.target=int\ getNum()
+numComments=4
