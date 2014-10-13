@@ -19,5 +19,6 @@ public class State extends Actor
     
     public void stateMove()
     {
+       
     }
 }

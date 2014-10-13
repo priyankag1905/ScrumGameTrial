@@ -12,8 +12,15 @@ public class CImpediment extends Card
      * Act - do whatever the CImpediment wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    ScrumBoard world;
     public void act() 
     {
-        // Add your action code here.
+        
+        world=(ScrumBoard)getWorld();
+         if(Greenfoot.mousePressed(this)){
+      
+       world.removeObject(this);
+       
+    }
     }    
 }

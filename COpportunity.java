@@ -12,8 +12,14 @@ public class COpportunity extends Card
      * Act - do whatever the COpportunity wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    ScrumBoard world;
     public void act() 
     {
-        // Add your action code here.
+      world=(ScrumBoard)getWorld();
+         if(Greenfoot.mousePressed(this)){
+      
+       world.removeObject(this);
     }    
+    
+}
 }

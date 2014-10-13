@@ -12,8 +12,17 @@ public class StTool extends State
      * Act - do whatever the Tool wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    ScrumBoard world;
     public void act() 
     {
-        // Add your action code here.
+         world = (ScrumBoard) getWorld();
     }    
+    
+      public  void stateMove()
+    {
+         System.out.println("Tool");
+          CTool cardTool = new CTool();
+        world.addObject(cardTool,100,300);
+    }
+    
 }
