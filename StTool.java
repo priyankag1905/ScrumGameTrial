@@ -22,7 +22,8 @@ public class StTool extends State
     {
          System.out.println("Tool");
           CTool cardTool = new CTool();
-        world.addObject(cardTool,100,300);
+          
+        world.addObject(cardTool,250,230);
     }
     
 }

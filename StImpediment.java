@@ -23,6 +23,7 @@ public class StImpediment extends State
     {
         System.out.println("Impediment");
          CImpediment cardImp = new CImpediment();
-        world.addObject(cardImp,100,300);
+                   System.out.println(world);
+        world.addObject(cardImp,250,230);
     }
 }

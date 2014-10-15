@@ -23,6 +23,7 @@ public class StOpportunity extends State
     {
         System.out.println("Opportunity");
         COpportunity cardOpp = new COpportunity();
-        world.addObject(cardOpp,100,300);
+                 
+        world.addObject(cardOpp,250,230);
     }
 }

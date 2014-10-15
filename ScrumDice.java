@@ -8,26 +8,133 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScrumDice extends Dice
 {
-    /**
-     * Act - do whatever the ScrumDice wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int rolling = 0;
+    private int rollCount = 0;
+    private boolean roller = true;
+    private int timer = 0;
+    private int num = 0;
+    ScrumBoard world ;
     public void act() 
-    {
-       
-    } 
+    {world = (ScrumBoard) getWorld();
+       checkThrow();
+    }
     
-    public int roll()
+    private void roll()
     {
-         int num=Greenfoot.getRandomNumber(5)+1;
-            System.out.println("output:"+num);
-            Message m = new Message(Integer.toString(num)) ;
-            ScrumBoard world = (ScrumBoard) getWorld();
-            ScrumDice dice = (ScrumDice) getWorld().getObjects(ScrumDice.class).get(0); 
-             String img = num+".png";
+    if(roller == true)
+    {
+        rolling++;
+        timer ++;
+    }
+    
+    if(timer > 100){
+        roller = false;
+        timer = 0;
+    }
+    
+    if(rolling == 10)
+    {
+            setImage("1.png");
+            Greenfoot.delay(10);  
             
-            dice.setImage(img);
-            //world.addObject( m, 100,100 ) ;
+        }
+    else if(rolling == 20)
+        {
+            setImage("2.png");
+            Greenfoot.delay(10);
+           
+    }
+    else if(rolling == 30)
+        {
+            setImage("3.png");
+            Greenfoot.delay(10);
+            
+    }
+    else if(rolling == 40)
+        {
+            setImage("4.png");
+            Greenfoot.delay(10);
+           
+    }
+    else if(rolling == 50)
+        {
+            setImage("5.png");
+            Greenfoot.delay(10);
+            
+    }
+    else if(rolling == 60)
+        {
+            setImage("6.png");
+            Greenfoot.delay(10);
+            rolling = 0;
+            
+    }else { 
+           
+    }
+    
+}
+private void checkThrow()
+{
+    if (Greenfoot.mouseClicked(this))
+         {
+             roller = true;
+             for(int i =0; i < 200 ;i++){
+            if(roller == true){
+                roll();
+            }else {
+                break;
+            }
+            }
+             roller = false;
+             int xx = Greenfoot.getRandomNumber(6);
+             if(xx == 0)
+             {
+                 xx = 6;
+                }
+             num = xx;
+             if (xx == 1)
+             {
+               setImage("1.png");
+               world.peg.movePeg(xx);
+            }
+            if (xx == 2)
+             {
+               setImage("2.png");
+               world.peg.movePeg(xx);
+            }
+            if (xx == 3)
+             {
+               setImage("3.png");
+                world.peg.movePeg(xx);
+            }
+            if (xx == 4)
+             {
+               setImage("4.png");
+               world.peg.movePeg(xx);
+            }
+            if (xx == 5)
+             {
+               setImage("5.png");
+                world.peg.movePeg(xx);
+            }
+            if (xx == 6)
+             {
+               setImage("6.png");
+               world.peg.movePeg(xx);
+            }
+          }          
+        }
+       
+       
+   public int getNum()
+    {
+//            int num=Greenfoot.getRandomNumber(5)+1;
+//             System.out.println("output:"+num);
+//             Message m = new Message(Integer.toString(num)) ;
+//             ScrumBoard world = (ScrumBoard) getWorld();
+//             ScrumDice dice = (ScrumDice) getWorld().getObjects(ScrumDice.class).get(0); 
+//              String img = num+".png";
+//             dice.setImage(img);
             return num;
     }
 }

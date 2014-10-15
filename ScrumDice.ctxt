@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ ScrumDice\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment1.params=
-comment1.target=int\ roll()
-numComments=2
+comment1.target=void\ roll()
+comment2.params=
+comment2.target=void\ checkThrow()
+comment3.params=
+comment3.target=int\ getNum()
+numComments=4
