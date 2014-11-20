@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ScrumBoard  extends World
+public class ScrumBoard  extends KinectWorld
 {
     public int[][] dayBoard;
     public Cell[] mainBoard;
@@ -19,13 +19,103 @@ public class ScrumBoard  extends World
     public Peg1 peg;
     private Rolled r;
     
+     private static final int THUMBNAIL_WIDTH = 80;//1063;
+    private static final int THUMBNAIL_HEIGHT = 60;//428;
+    
+    private long leftHandUp;
+    private Label leftHandWarning;
+    
+    
+    
+    
     public ScrumBoard()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1063,428, 1);                
+       // super(1063,428, 1,false);                
+       // prepare();
+        
+        
+        
+        super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         prepare();
+        final int width = getWidth();
+        final int height = getHeight();
+        
+       // addObject(new Brush(width, height), width/2, height/2);
+        //addObject(new Instructions(), width/2, height/2);
+        addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
+       
+       // Label instr = new Label("Use your right hand to paint, raise left hand to clear.", 20);
+       // addObject(instr, instr.getImage().getWidth() / 2, getBackground().getHeight() - (instr.getImage().getHeight() / 2));
+        
+        
     }
+    
+   /*  public void act()
+    {
+        super.act();
+        if (!isConnected())
+            return;
+                 
+        UserData[] us = getTrackedUsers();
+        //getBackground().setColor(java.awt.Color.WHITE);
+       // getBackground().fill();
+        
+        boolean anyLeftHandUp = false;
+        
+        for (UserData u: us)
+        {
+            //Draws their stick figure:
+           // u.drawStickFigure(getBackground(), 60);
+            
+            anyLeftHandUp = anyLeftHandUp || (u.getJoint(Joint.LEFT_HAND).getY() < u.getJoint(Joint.HEAD).getY());
+             Joint rightHand = u.getJoint(Joint.RIGHT_HAND);
+            //getImage().fillOval(rightHand.getX(), rightHand.getY(), 20, 20);
 
+            if (u.getJoint(Joint.LEFT_HAND).getY() < u.getJoint(Joint.HEAD).getY())
+            {
+                //getImage().clear();
+                
+                
+                System.out.println("ROLL");
+            }
+            
+           
+        }
+        
+        // This is extra code used to warn the user if any of them is keeping their
+        // left hand in the air, which effectively prevents any painting because
+        // the brush will be cleared every frame:        
+        if (anyLeftHandUp)
+        {
+        
+            if (leftHandUp == -1)
+            {
+                leftHandUp = System.currentTimeMillis();
+            }
+            else
+            {
+                if (System.currentTimeMillis() - leftHandUp > 5000 && leftHandWarning == null)
+                {
+                    leftHandWarning = new Label("Put your left hand down to stop clearing the screen.", 40);
+                    addObject(leftHandWarning, getWidth() / 2, getHeight() / 2);
+                }
+            }
+        }
+        else
+        {
+            leftHandUp = -1;
+         
+            
+            if (leftHandWarning != null)
+            {
+                removeObject(leftHandWarning);
+                leftHandWarning = null;
+            }
+        }
+    }
+    
+*/
 
     /**
 * Prepare the world for the start of the program. That is: create the initial

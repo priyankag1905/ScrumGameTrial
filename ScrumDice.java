@@ -14,9 +14,60 @@ public class ScrumDice extends Dice
     private int timer = 0;
     private int num = 0;
     ScrumBoard world ;
+    private boolean roll =  false;
     public void act() 
-    {world = (ScrumBoard) getWorld();
+    {
+        super.act();
+       // if (!isConnected())
+        //    return;
+        
+        world = (ScrumBoard) getWorld();
+                  
+        UserData[] us = world.getTrackedUsers();
+       
+        boolean anyLeftHandUp = false;
+        
+        for (UserData u: us)
+        {
+           
+            anyLeftHandUp = anyLeftHandUp || (u.getJoint(Joint.LEFT_HAND).getY() < u.getJoint(Joint.HEAD).getY());
+             Joint rightHand = u.getJoint(Joint.RIGHT_HAND);
+           
+           /* if (u.getJoint(Joint.LEFT_HAND).getY() < u.getJoint(Joint.HEAD).getY())
+            {
+               
+                
+                
+                System.out.println("ROLL");
+            }*/
+            
+           
+        }
+        
+              
+        if (anyLeftHandUp)
+        {
+          
+            System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+           
+            roll = true;
+        }
+            
+            
+            
+            
+            
+            
+        
+        world = (ScrumBoard) getWorld();
        checkThrow();
+       
+       
+       
+       
+       
+       
+       
     }
     
     private void roll()
@@ -75,7 +126,7 @@ public class ScrumDice extends Dice
 }
 private void checkThrow()
 {
-    if (Greenfoot.mouseClicked(this))
+    if (/*roll*/Greenfoot.mouseClicked(this))
          {
              roller = true;
              for(int i =0; i < 200 ;i++){
@@ -122,7 +173,10 @@ private void checkThrow()
                setImage("6.png");
                world.peg.movePeg(xx);
             }
-          }          
+          }         
+          
+          
+            roll = false;
         }
        
        
