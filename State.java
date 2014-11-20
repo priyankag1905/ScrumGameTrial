@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class State extends Actor
+public abstract class State extends Actor
 {
     /**
      * Act - do whatever the State wants to do. This method is called whenever
